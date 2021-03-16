@@ -1,12 +1,11 @@
-$bg-color: yellow;
-$border-color: red;
+body {
+  background-color: #272c33;
+}
 
 .app {
-  font-family: helvetica, arial, sans-serif;
-  padding: 2em;
-  border: 5px solid $border-color;
-
-  p {
-    background-color: $bg-color;
-  }
+  height: 95vh; //vh - viewport height
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  justify-content: center;
 }

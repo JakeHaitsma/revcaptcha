@@ -1,0 +1,127 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
+
+.revCaptchaContainer {
+  display: flex;
+  align-items: center;
+  width: 420px;
+  height: 100px;
+  background-color: #fafbfa;
+  border-radius: 5px;
+  -webkit-box-shadow: 0px 18px 55px -19px rgba(0,0,0,0.4);
+  -moz-box-shadow: 0px 18px 55px -19px rgba(0,0,0,0.4);
+  box-shadow: 0px 18px 55px -19px rgba(0,0,0,0.4);
+}
+
+.revCaptchaLogo {
+  height: 50%;
+  margin-left: auto;
+  margin-right: 20px;
+}
+
+.revCaptchaCheckmark {
+  height: 50%;
+  margin-left: 20px;
+}
+
+.revCaptchaCheckbox {
+  width: 42px;
+  height: 42px;
+  border-radius: 5px;
+  border: 3px solid #b3b3b3;
+  cursor: pointer;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.revCaptchaText {
+  color: #575454;
+  font-family: 'Open Sans', sans-serif;
+}
+
+:root {
+  --s-loader-wrapper-bg-color: rgb(21, 22, 43);
+  --s-loader-width: 32px;
+  --s-loader-thickness: 8px;
+  --s-loader-height: var(--s-loader-width);
+  --s-loader-border-color-trans: #c6dbf5;
+  --s-loader-border-color-full: #488cf1;
+}
+
+body {
+  margin: 0;
+  background: var(--s-loader-wrapper-bg-color, rgb(21, 22, 43));
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.spinning-loader {
+  margin-left: 20px;
+  margin-right: 20px;
+  width: var(--s-loader-width);
+  height: var(--s-loader-height);
+  border: var(--s-loader-thickness) solid var(--s-loader-border-color-trans);
+  border-left-color: var(--s-loader-border-color-full);
+  border-radius: 50%;
+  background: transparent;
+  animation-name: rotate-s-loader;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  position: relative;
+}
+
+@keyframes rotate-s-loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.revCaptchaEquationsContainer {
+  width: 100%;
+  font-family: 'Roboto Mono', monospace;
+  padding: 10px;;
+}
+
+input.revCaptchaSolutionInput {
+  float: right;
+}
+
+.revCaptchaModalHeader {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #2984fc;
+  color: white;
+  padding: 10px;
+
+  h3 {
+    margin-block-start: 5px;;
+  }
+
+  h4 {
+    font-size: 12px;
+  }
+}
+
+.rodal-dialog {
+  padding: unset!important;
+}
+
+.revCaptchaSubmitButton {
+  width: 85px;
+  height: 35px;
+  background-color: #2984fc;
+  color: white;
+  float: right;
+  margin-top: 20px;
+  font-family: 'Open Sans', sans-serif;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+}
