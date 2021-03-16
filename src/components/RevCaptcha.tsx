@@ -7,8 +7,8 @@ import Confetti from 'react-confetti'
 
 const logo = require("./../assets/img/logo.png");
 const checkmark = require("./../assets/img/green-check.png");
-const NUM_EQUATIONS = 500;
-const TIMER_SECONDS = 15;
+const NUM_EQUATIONS = 3;
+const TIMER_SECONDS = 60;
 const defaultState = {
   loading: false,
   modalOpen: false,
@@ -132,8 +132,10 @@ class RevCaptcha extends React.Component<Record<string, unknown>, any> {
   }
 
   handleSolutionChange(e) {
+    const { solutionsFormData } = this.state;
     this.setState({
       solutionsFormData: {
+        ...solutionsFormData,
         [e.target.name]: e.target.value,
       },
     })
@@ -149,13 +151,15 @@ class RevCaptcha extends React.Component<Record<string, unknown>, any> {
       const submittedSolution = solutionsFormData?.[`solution-${index}`]?.trim();
       if (typeof submittedSolution === 'undefined') {
         success = false;
+        return
       }
 
       const solution = this.getSolution(equation.a, equation.b, equation.operand);
       const parsedSubmission = parseInt(submittedSolution);
 
-      if (isNaN(parsedSubmission) || solution !== parsedSubmission) {
+      if (solution !== parsedSubmission) {
         success = false;
+        return;
       }
     });
     this.setState({
