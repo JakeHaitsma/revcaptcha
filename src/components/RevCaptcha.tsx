@@ -7,8 +7,8 @@ import Confetti from 'react-confetti'
 
 const logo = require("./../assets/img/logo.png");
 const checkmark = require("./../assets/img/green-check.png");
-const NUM_EQUATIONS = 3;
-const TIMER_SECONDS = 60;
+const NUM_EQUATIONS = 500;
+const TIMER_SECONDS = 10;
 const defaultState = {
   loading: false,
   modalOpen: false,
