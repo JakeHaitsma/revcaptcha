@@ -2,7 +2,7 @@ import * as React from "react";
 import { hot } from "react-hot-loader";
 
 import "./../assets/scss/App.scss";
-import RevCaptcha from "./revCaptcha";
+import RevCaptcha from "./RevCaptcha";
 
 class App extends React.Component<Record<string, unknown>, undefined> {
   public render() {

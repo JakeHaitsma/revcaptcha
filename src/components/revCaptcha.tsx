@@ -1,14 +1,14 @@
 import * as React from "react";
 import { hot } from "react-hot-loader";
 import Rodal from 'rodal';
-import "./../assets/scss/revCaptcha.scss";
+import "./../assets/scss/RevCaptcha.scss";
 import 'rodal/lib/rodal.css';
 import Confetti from 'react-confetti'
 
 const logo = require("./../assets/img/logo.png");
 const checkmark = require("./../assets/img/green-check.png");
-const NUM_EQUATIONS = 1;
-const TIMER_SECONDS = 10;
+const NUM_EQUATIONS = 500;
+const TIMER_SECONDS = 15;
 const defaultState = {
   loading: false,
   modalOpen: false,
@@ -75,7 +75,7 @@ class RevCaptcha extends React.Component<Record<string, unknown>, any> {
           <div className="revCaptchaEquationsContainer" style={{height: '460px', width: '380px', overflowY: 'scroll'}}>
             <form onSubmit={this.validateSolutions}>
               {equations.map((equation) => {
-                return <div key={`equation-${equation.id}-container`}>
+                return <div className="revCaptchaEquationRow" key={`equation-${equation.id}-container`}>
                   <label>
                     {equation.a} {equation.operand} {equation.b}
                     <input
